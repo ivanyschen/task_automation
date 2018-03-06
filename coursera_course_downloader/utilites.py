@@ -1,17 +1,9 @@
-import time
-
-from selenium import webdriver
+from page import LoginPage, CourseHomePage
 
 
-def login(login_page_url, email, username):
-    """
-    :param login_page_url: for Coursera: https://www.coursera.org/?authMode=login
-    :param email:
-    :param username:
-    :return:
-    """
-    pass
-
-
-def get_lesson_url(weekly_syllabus_url):
-    pass
+def login(driver,  page_url):
+    login_page = LoginPage(driver, 'https://www.coursera.org/?authMode=login')
+    login_page.fill_up_email('ujhuyz0110@gmail.com')
+    login_page.fill_up_password('Yushuo1992')
+    login_page.click_login()
+    return
